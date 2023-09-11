@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  id="num1">
+    <button onclick="check()"> SHO JE</button>
+    <button onclick="clearint()">clear prompt</button>
+</body>
+</html>
+<script>
+    const num1 = document.getElementById("num1").value
+
+    let random1 = Math.floor(Math.random()*10);
+   
+    console.log(random1)
+   let pp =  setInterval(() => {
+        alert("trade")
+    },3000);
+    function clearint(){
+        clearInterval(pp)
+    }
+    function check(){
+        if(num1.value === random1){    
+        setTimeout(()=>{
+            alert("EYI JE")
+        },3000)
+        }
+        else{
+            setTimeout(()=>{
+            alert("EYI O JE")
+        },3000)
+        }
+    }  
+</script>

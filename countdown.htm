@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="count">
+    <button onclick="ofnum()">run</button>
+    <span id="showspan"></span>
+</body>
+<script>
+   let count = document.getElementById("count").value
+    let showspan = document.getElementById("showspan")
+    let num =Number(count.value)
+    
+
+
+    let  tt = setInterval(() => {
+        num--
+    },1000);
+
+
+
+function updater(){
+showspan.innerHTML = `${num}`
+}
+    
+
+function ofnum(){
+      if(num < 1){
+    clearInterval(tt)
+      alert("countdown over") 
+    }else if(num < 11){  
+    setInterval(() => {
+        num--
+    },1000);
+    updater();
+   }
+console.log(count)
+
+    }
+   
+</script>
+</html>

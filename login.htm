@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <!-- //the signup section// -->
+    <div>
+<input type="text" id="NameSignInput" placeholder="Name here">
+<input type="email" name="" id="EmailSignInput" placeholder="Input your mail">
+<input type="number" name="" id="NumberSignInput" placeholder="+234...">
+<input type="password" name="" id="PasswordSignInput" placeholder="password here">
+<input type="password" name="" id="ConfirmSignInput" placeholder="confirm password">
+<button onclick="register()">REGISTER</button>
+    </div>
+
+
+
+<!-- //the login section// -->
+    <div>
+<input type="email" name="" id="EmailLoginInput" placeholder="Email or phone-number">
+<input type="password" name="" id="PasswordLoginInput" placeholder="Input password here">
+<button onclick="login()">LOGIN</button>
+    </div>
+</body>
+
+
+
+<!-- THE SCRIPT -->
+<script>
+
+
+
+
+    // opening an empty array
+    let localarray = []
+
+
+
+   
+
+
+    //function for register and login
+    function register() {
+            let nasign = document.getElementById("NameSignInput").value;
+            let emsign = document.getElementById("EmailSignInput").value;
+            let nusign = document.getElementById("NumberSignInput").value;
+            let pasign = document.getElementById("PasswordSignInput").value;
+            let consign = document.getElementById("ConfirmSignInput").value;
+
+            if (isNaN(nasign) && isNaN(nusign)) {
+                alert("Please check inputs.");
+            } else if (
+                nasign === "" || emsign === "" || nusign === "" || pasign === ""
+            ) {
+                alert("Input fields cannot be empty.");
+            } else if (pasign !== consign) {
+                alert("Please confirm your password.");
+            } else {
+                let objectform = {
+                    name: nasign,
+                    email: emsign,
+                    Number: nusign,
+                    password: pasign,
+                    confirmPassword: consign,
+                };
+                localarray.push(objectform);
+                clearInputFunctions()
+                console.log(localarray);
+            }
+        }
+
+
+
+
+         // the function used for clearing all inputs
+    function clearInputFunctions(){
+
+
+
+        
+        document.getElementById("NameSignInput").value = "";
+        document.getElementById("EmailSignInput").value = "";
+        document.getElementById("NumberSignInput").value = "";
+        document.getElementById("PasswordSignInput").value = "";
+        document.getElementById("ConfirmSignInput").value = "";
+        document.getElementById("EmailLoginInput").value = "";
+        document.getElementById("PasswordLoginInput").value = "";
+
+
+
+
+    }
+
+
+
+
+        //login function
+        function login() {
+
+
+
+
+            let emailLogin = document.getElementById("EmailLoginInput").value;
+            let passwordLogin = document.getElementById("PasswordLoginInput").value;
+
+            const foundUser = localarray.find((user) => user.email === emailLogin && user.password === passwordLogin);
+
+            if (foundUser) {
+                alert("Login successful. Welcome, " + foundUser.name);
+                clearInputFunctions()
+            } else {
+                alert("Login failed. Please check your credentials.");
+            }
+
+
+
+
+        }
+</script>
+</html>

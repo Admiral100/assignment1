@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="next()">NEXT</button>
+    <img id="img" height="200" width="200" src="" alt="">
+    <button onclick="prev()">PREVIOUS</button>
+    
+</body>
+<script>
+   let BBB = 0;
+   let disp = document.getElementById("disp");
+   let img = document.getElementById("img");
+   const ar = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg","img5.jpg","img6.jpg"];
+   img.src = ar[BBB]
+  
+   function next(){
+   img.src = ar[BBB]
+     
+      if(BBB > 4){
+        BBB = 0;
+      } 
+      else{
+        BBB++
+      }
+   }
+   function prev(){ 
+    img.src = ar[BBB]   
+    if(BBB < 1){
+         BBB = 5;
+        } 
+      else{
+        BBB --
+      }      
+   }  
+</script>
+</html>
