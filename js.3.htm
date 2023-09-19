@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 id="showData"></h1>
+        <button onclick="one()">ONE</button>
+        <button onclick="two()">TWO</button>
+        <button onclick="three()">THREE</button>
+        <button onclick="four()">FOUR</button>
+        <button onclick="five()">FIVE</button>
+
+        <input type="number" placeholder="what index ?" id="dexin">
+        <button onclick="action1()"></button>
+    </center>
+</body>
+</html>
+<script>
+    let info = ["sam ","dan ","vic ","shegz ","dupe "]
+
+
+    localStorage.setItem("identify", JSON.stringify(info))
+
+
+    let localInfo = JSON.parse(localStorage.getItem("identify"))
+
+    let showData = document.getElementById("showData")
+
+    showData.innerHTML = `the array is ${localInfo}`
+
+    function one(){
+        //  info.splice(0, 1)
+        // let localInfo = JSON.parse(localStorage.getItem("identify"))
+        // showData.innerHTML = `the array is ${localInfo}`
+        let info = ["dan ","vic ","shegz ","dupe "]
+        localStorage.setItem("identify", JSON.stringify(info))
+        let localInfo = JSON.parse(localStorage.getItem("identify"))
+        showData.innerHTML = `the array is ${localInfo}`
+    }
+    function two(){
+        let info = ["sam ","vic ","shegz ","dupe "]
+        localStorage.setItem("identify", JSON.stringify(info))
+        let localInfo = JSON.parse(localStorage.getItem("identify"))
+        showData.innerHTML = `the array is ${localInfo}`
+    }
+    function three(){
+        let info = ["sam ","dan ","shegz ","dupe "]
+        localStorage.setItem("identify", JSON.stringify(info))
+        let localInfo = JSON.parse(localStorage.getItem("identify"))
+        showData.innerHTML = `the array is ${localInfo}`
+    }
+    function four(){
+        let info = ["sam ","dan ","vic ","dupe "]
+        localStorage.setItem("identify", JSON.stringify(info))
+        let localInfo = JSON.parse(localStorage.getItem("identify"))
+        showData.innerHTML = `the array is ${localInfo}`
+    }
+    function five(){
+        let info = ["sam ","dan ","vic ","shegz "]
+        localStorage.setItem("identify", JSON.stringify(info))
+        let localInfo = JSON.parse(localStorage.getItem("identify"))
+        showData.innerHTML = `the array is ${localInfo}`
+    }
+
+    function action1(){
+        let dexin = document.getElementById("dexin0")
+       let ppp = Number(dexin)
+        if(ppp > 5){
+            prompt("the array length is only 5")
+        }else{
+            info.splice(ppp,1)
+            localStorage.setItem("identify", JSON.stringify(info))
+
+
+             let localInfo = JSON.parse(localStorage.getItem("identify"))
+             
+             let showData = document.getElementById("showData")
+             
+             showData.innerHTML = `the array is ${localInfo}`
+        }
+    }
+
+</script>

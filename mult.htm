@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background:violet;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: fit-content;
+
+    }
+    #container{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        width: 700px;
+    }
+    #in1{
+        width: 250px;
+        height: 50px;
+        background: linear-gradient(red, orange);
+        font-size: x-large;
+        font-weight: 900;
+        border: 0;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+    }
+    #in2{
+        width: 250px;
+        height: 50px;
+        background: linear-gradient(red, orange);
+        font-size: x-large;
+        font-weight: 900;
+        margin-left: -90px;
+        border: 0;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+    }
+    p{
+        font-weight: 900;
+        font-size: x-large;
+        color: rgb(0, 0, 0);
+    }
+    .ff{
+        display: block;
+    }
+    #out1{
+        margin-left: -70px;
+        border: 0px;
+        border-radius: 10px;
+        font-weight: 600;
+        background-color:rgba(100, 148, 237, 0.764);
+        margin-left: -100px;
+        
+    }
+</style>
+<body>
+   <div id="container">
+     <input type="text" id="in1">
+    <input type="text" id="in2">
+    <button id="out1" onclick="displaymul()">click me</button>
+   </div>
+   <div class="ff"><p id="out2"></p></div>
+</body>
+<script>
+    let in1 = document.getElementById("in1");
+    let in2 = document.getElementById("in2");
+    let out2 = document.getElementById("out2");
+  
+
+    function displaymul(){
+    
+        let m = '';
+        
+        for(let p = 1;  p <= in2.value; p++ ) {
+           let result = in1.value * p;
+          
+           m += `   ${in1.value}   *    ${p}   =    ${result}<br><br><br>`;
+           
+        }
+        out2.innerHTML = m;
+       }
+</script>
+</html>

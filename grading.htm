@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: orange;
+    }
+#bigdiv{
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    border: 0px solid black;
+    transform: translate(200%,50%);
+    background-color: rgb(157, 90, 157)
+}
+#bigh{
+    font-size: large;
+    text-decoration: underline;
+}
+#button1{
+    margin-left: 0;
+    height: 25px;
+    border: 1px solid rgb(38, 160, 38);
+    border-radius: 5px;
+    background-color:rgb(38, 160, 38) ;
+}
+#divans{
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    border:2px black solid;
+   margin-top: 5px;
+   background-color: blanchedalmond;
+}
+#grading1{
+    margin-right: 0px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: burlywood;
+}
+</style>
+<body>
+    <div id="bigdiv">
+        <center>
+        <h1 id="bigh">GRADING SYSTEM</h1>
+        <input type="text" id="grading1">
+        <button id="button1" onclick="checkNum()">CHECK</button>
+        <!-- <audio id="aud" > </audio> -->
+        <div id="divans"></div>
+        </center>
+    </div>
+</body>
+<script>
+    let grading1 = document.getElementById("grading1")
+    let divans = document.getElementById("divans")
+    let aud = document.getElementById("aud")
+
+    function checkNum(){
+      let test = Number(grading1.value)
+      if( test > 100){
+      divans.innerHTML = `input a valid score distinction-A <audio autoplay>
+        <source src = "mumu-2-much.mp3">
+        </audio>`
+      aud.src = ""
+    }
+    else if( test > 89){
+    divans.innerHTML = `distinction-A <audio autoplay>
+        <source src = "E-shock-you-broda-shaggi.mp3">
+        </audio>`
+    aud.src = ""
+    }
+    else if( test > 79){
+    divans.innerHTML = `excellent-B <audio autoplay>
+        <source src = "No-be-juju-be-that.mp3">
+        </audio>`
+    aud.src = ""
+    }
+    else if( test > 69){
+    divans.innerHTML = `very-good-C <audio autoplay>
+        <source src = "They-av-left-you-behind.mp3">
+        </audio>`
+    
+    }
+    else if( test > 59){
+    divans.innerHTML = `good-D <audio autoplay>
+        <source src = "Aye-Le-O-Ibosi-O.mp3">
+        </audio>`
+   
+    }
+    else if(test > 0){
+    divans.innerHTML = `fail-F <audio autoplay>
+        <source src = "Funny-laugh-no-no-no.mp3">
+        </audio>`
+    }
+}
+</script>
+</html>

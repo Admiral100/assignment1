@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dodo()"></button>
+    <h1 id="showh1"></h1>
+    <input type="file" onchange="listen(event)">
+    <img id="dispimg" alt="" width="200" height="200">
+</body>
+</html>
+<script>
+    let showh1 = document.getElementById(("showh1"))
+   function dodo(){
+    let date = new Date()
+    console.log(date)
+   }
+   let date = new Date()
+   let aa = date.getHours();
+   let bb = date.getMinutes()
+   let cc = date.getSeconds()
+
+   showh1.innerHTML = `${aa}:${bb}:${cc}`
+   function listen(ev){
+    let file = ev.target.files[0]
+    let reader = new FileReader()
+    reader.addEventListener("load", (e)=>{
+        let result = e.target.result
+        console.log(result);
+        dispimg.src = result
+    })
+    if(file){
+        reader.readAsDataURL(file)
+    }
+   }
+</script>

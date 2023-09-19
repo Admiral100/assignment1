@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <button id="click" onclick="work()">click me</button> 
+   <p id="t1"></p>
+   <p id="t2"></p>
+   <p id="t3"></p>
+   <p id="t4"></p>
+   <p id="t5"></p>
+
+</body>
+<script>
+     let a2 = prompt("input your string")
+
+      let t1 = document.getElementById("t1");
+      let t2 = document.getElementById("t2");
+      let t3= document.getElementById("t3");
+      let t4 = document.getElementById("t4");
+      let t5 = document.getElementById("t5");
+     
+     function work(){
+        t1.innerHTML = `the length of the string is ${a2.length}`
+        t2.innerHTML = `the upper-case of the string is ${a2.toUpperCase()}`
+        t3.innerHTML = `the lower-case of the string is ${a2.toLowerCase()}`
+        t5.innerHTML = `the index of "A" in the string is ${a2.search("A")}`
+        if(a2.search("javascript")===true){
+            t4.innerHTML = `the sentence does not contain "javascript"`
+        }
+        else{
+            t4.innerHTML = `the sentence contains "javascript"`
+        }
+     } 
+</script>
+</html>
